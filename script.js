@@ -31,7 +31,18 @@ if (password.length < 8) {
     isValid = false
     messages.push('Password must be at least 8 characters long.');
 }
+//Make feedbackDiv visible
+feedbackDiv.style.display = 'block';
 
+if (isValid) {
+    // If the form is valid
+    feedbackDiv.textContent = 'Registration successful!';
+    feedbackDiv.style.color = '#28a745'; // Success color (green)
+  } else {
+    // If the form is invalid
+    feedbackDiv.innerHTML = messages.join('<br>'); // Join messages with <br> tags
+    feedbackDiv.style.color = '#dc3545'; // Error color (red)
+  }
 
 
 
